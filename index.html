@@ -1,456 +1,645 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>SILMAR | Moda en Oberá</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f8f7f5;
-            color: #222;
-        }
-
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255,255,255,0.95);
-            padding: 18px 7%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
-        }
-
-        .logo {
-            font-size: 27px;
-            font-weight: bold;
-            letter-spacing: 3px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #222;
-            margin-left: 25px;
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            color: #9b6b55;
-        }
-
-        .hero {
-            min-height: 100vh;
-            background:
-                linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
-                url("https://www.noticiasdeacanda.com/wp-content/uploads/2026/04/silmar_1-1063x2048.png")
-                center/cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding: 100px 20px 40px;
-        }
-
-        .hero-content h1 {
-            font-size: clamp(55px, 10vw, 110px);
-            letter-spacing: 12px;
-            margin-bottom: 15px;
-        }
-
-        .hero-content p {
-            font-size: 22px;
-            margin-bottom: 35px;
-        }
-
-        .button {
-            display: inline-block;
-            background: white;
-            color: #222;
-            padding: 15px 30px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 30px;
-            transition: 0.3s;
-        }
-
-        .button:hover {
-            transform: translateY(-3px);
-            background: #e9d8cd;
-        }
-
-        section {
-            padding: 90px 7%;
-        }
-
-        .title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .title h2 {
-            font-size: 38px;
-            margin-bottom: 10px;
-        }
-
-        .title p {
-            color: #777;
-        }
-
-        .products {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 25px;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        .product {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: 0.3s;
-        }
-
-        .product:hover {
-            transform: translateY(-7px);
-        }
-
-        .product img {
-            width: 100%;
-            height: 310px;
-            object-fit: cover;
-        }
-
-        .product-info {
-            padding: 20px;
-        }
-
-        .product-info h3 {
-            margin-bottom: 8px;
-        }
-
-        .price {
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        .product-button {
-            display: block;
-            text-align: center;
-            background: #222;
-            color: white;
-            padding: 11px;
-            border-radius: 25px;
-            text-decoration: none;
-        }
-
-        .about {
-            background: #eee7e2;
-            text-align: center;
-        }
-
-        .about-content {
-            max-width: 750px;
-            margin: auto;
-            line-height: 1.8;
-            font-size: 17px;
-        }
-
-        .contact {
-            text-align: center;
-        }
-
-        .contact-box {
-            max-width: 650px;
-            margin: auto;
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
-        }
-
-        .contact-box p {
-            margin: 12px 0;
-        }
-
-        .whatsapp {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 15px 30px;
-            background: #222;
-            color: white;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
-        }
-
-        footer {
-            background: #1e1e1e;
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
-        }
-
-        footer p {
-            margin: 7px;
-            color: #bbb;
-        }
-
-        @media (max-width: 700px) {
-
-            header {
-                padding: 15px 5%;
-            }
-
-            nav a {
-                margin-left: 10px;
-                font-size: 11px;
-            }
-
-            .hero-content h1 {
-                letter-spacing: 6px;
-            }
-
-            section {
-                padding: 70px 5%;
-            }
-
-            .product img {
-                height: 280px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Silmar | Tienda online</title>
+<style>
+:root {
+  --color: #a67c52;
+  --fondo: #faf8f5;
+  --texto: #292722;
+  --tarjeta: #ffffff;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--fondo);
+  color: var(--texto);
+}
+header {
+  background: var(--tarjeta);
+  padding: 18px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #eee8e0;
+}
+.logo {
+  font-family: Georgia, serif;
+  font-size: 30px;
+  color: var(--color);
+  letter-spacing: 2px;
+}
+nav { display:flex; gap:15px; align-items:center; }
+a { color: inherit; text-decoration:none; }
+button, .boton {
+  border: 0;
+  border-radius: 7px;
+  padding: 11px 15px;
+  cursor: pointer;
+  background: var(--color);
+  color: white;
+  font-size: 14px;
+}
+button:hover, .boton:hover { opacity: .85; }
+.secundario { background: #eee8e0; color: #292722; }
+.portada {
+  padding: 65px 20px;
+  text-align: center;
+  background: linear-gradient(135deg,#f1e8dd,#faf8f5);
+}
+.portada h1 {
+  font-family: Georgia,serif;
+  font-size: clamp(35px,6vw,58px);
+  font-weight: normal;
+  margin: 0 0 15px;
+}
+.portada p { color:#71685e; }
+main { max-width:1200px; margin:auto; padding:35px 20px; }
+.barra {
+  display:flex;
+  gap:12px;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  margin-bottom:25px;
+}
+input, textarea, select {
+  width:100%;
+  padding:12px;
+  border:1px solid #ddd5cb;
+  border-radius:7px;
+  background:white;
+  font:inherit;
+}
+.busqueda { max-width:350px; }
+.productos {
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(210px,1fr));
+  gap:22px;
+}
+.producto {
+  background:var(--tarjeta);
+  border-radius:10px;
+  overflow:hidden;
+  border:1px solid #eee8e0;
+}
+.producto img {
+  width:100%;
+  height:245px;
+  object-fit:cover;
+  background:#eee8e0;
+}
+.info { padding:16px; }
+.info h3 { margin:0 0 8px; font-size:17px; }
+.descripcion { color:#777; font-size:14px; min-height:35px; }
+.precio { font-size:20px; font-weight:bold; margin:12px 0; }
+.acciones { display:flex; gap:8px; flex-wrap:wrap; }
+.acciones button { flex:1; }
+footer {
+  margin-top:40px;
+  padding:35px 20px;
+  background:#292722;
+  color:white;
+  text-align:center;
+  line-height:2;
+}
+footer a { color:#e5c9a8; }
+#admin {
+  display:none;
+  max-width:850px;
+  margin:25px auto;
+  padding:22px;
+  background:white;
+  border:1px solid #ddd5cb;
+  border-radius:12px;
+}
+#admin h2 { font-family:Georgia,serif; }
+.campos {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  gap:12px;
+}
+.campo { display:flex; flex-direction:column; gap:6px; }
+.campo label { font-size:13px; color:#62594f; }
+.seccion { border-top:1px solid #eee; padding-top:18px; margin-top:20px; }
+.lista-admin {
+  display:flex; justify-content:space-between; align-items:center;
+  gap:10px; padding:12px 0; border-bottom:1px solid #eee;
+}
+#carrito {
+  display:none;
+  position:fixed;
+  inset:0;
+  background:#0008;
+  z-index:5;
+}
+.panel-carrito {
+  background:white;
+  max-width:450px;
+  margin:35px auto;
+  padding:22px;
+  border-radius:12px;
+  max-height:85vh;
+  overflow:auto;
+}
+@media(max-width:500px) {
+  header { justify-content:center; }
+  nav { flex-wrap:wrap; justify-content:center; }
+  .portada { padding:45px 15px; }
+  .productos { grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+  .producto img { height:170px; }
+  .info { padding:10px; }
+  .info h3 { font-size:15px; }
+  .precio { font-size:17px; }
+  .acciones button { padding:10px 7px; font-size:12px; }
+}
+</style>
 </head>
-
 <body>
 
 <header>
-    <div class="logo">SILMAR</div>
-
-    <nav>
-        <a href="#inicio">INICIO</a>
-        <a href="#productos">COLECCIÓN</a>
-        <a href="#nosotros">NOSOTROS</a>
-        <a href="#contacto">CONTACTO</a>
-    </nav>
+  <a href="#" class="logo" id="logo">SILMAR</a>
+  <nav>
+    <a href="#catalogo">Productos</a>
+    <a id="instagram" href="https://instagram.com/silmartiendas"
+       target="_blank" rel="noopener">Instagram</a>
+    <button onclick="abrirCarrito()">Carrito (<span id="cantidad">0</span>)</button>
+    <button class="secundario" onclick="administrar()">Administrar</button>
+  </nav>
 </header>
 
-
-<section class="hero" id="inicio">
-
-    <div class="hero-content">
-
-        <h1>SILMAR</h1>
-
-        <p>Moda que va con vos.</p>
-
-        <a href="#productos" class="button">
-            VER COLECCIÓN
-        </a>
-
-    </div>
-
+<section class="portada">
+  <h1 id="titulo">Detalles que enamoran</h1>
+  <p id="subtitulo">Descubrí nuestros productos y encontrá tu favorito.</p>
+  <a href="#catalogo" class="boton">Ver colección</a>
 </section>
 
+<section id="admin">
+  <h2>Panel de administración</h2>
+  <p>Desde acá podés personalizar tu tienda sin modificar el código.</p>
 
-<section id="productos">
-
-    <div class="title">
-
-        <h2>Nueva colección</h2>
-
-        <p>Descubrí nuestros favoritos de temporada</p>
-
+  <div class="seccion">
+    <h3>Datos del negocio</h3>
+    <div class="campos">
+      <div class="campo"><label>Nombre</label><input id="cNombre"></div>
+      <div class="campo"><label>Título de portada</label><input id="cTitulo"></div>
+      <div class="campo"><label>Descripción de portada</label><input id="cSubtitulo"></div>
+      <div class="campo"><label>WhatsApp (código de país + número)</label><input id="cTelefono" placeholder="5493755717398"></div>
+      <div class="campo"><label>Instagram (sin @)</label><input id="cInstagram"></div>
+      <div class="campo"><label>Color principal</label><input id="cColor" type="color"></div>
     </div>
+    <br><button onclick="guardarConfiguracion()">Guardar cambios</button>
+  </div>
 
-
-    <div class="products">
-
-
-        <div class="product">
-
-            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80">
-
-            <div class="product-info">
-
-                <h3>Remera Essential</h3>
-
-                <p>Remera básica de algodón.</p>
-
-                <br>
-
-                <div class="price">$18.000</div>
-
-                <a class="product-button" href="#contacto">
-                    Consultar
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <div class="product">
-
-            <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=800&q=80">
-
-            <div class="product-info">
-
-                <h3>Buzo Oversize</h3>
-
-                <p>Diseño cómodo y moderno.</p>
-
-                <br>
-
-                <div class="price">$35.000</div>
-
-                <a class="product-button" href="#contacto">
-                    Consultar
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <div class="product">
-
-            <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=800&q=80">
-
-            <div class="product-info">
-
-                <h3>Jean Classic</h3>
-
-                <p>Jean de corte clásico.</p>
-
-                <br>
-
-                <div class="price">$42.000</div>
-
-                <a class="product-button" href="#contacto">
-                    Consultar
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <div class="product">
-
-            <img src="https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=800&q=80">
-
-            <div class="product-info">
-
-                <h3>Campera Urban</h3>
-
-                <p>Campera para todos los días.</p>
-
-                <br>
-
-                <div class="price">$58.000</div>
-
-                <a class="product-button" href="#contacto">
-                    Consultar
-                </a>
-
-            </div>
-
-        </div>
-
+  <div class="seccion">
+    <h3>Agregar producto</h3>
+    <div class="campos">
+      <div class="campo"><label>Nombre</label><input id="pNombre" placeholder="Ej. Camisa clásica"></div>
+      <div class="campo"><label>Precio</label><input id="pPrecio" type="number" min="0" placeholder="15000"></div>
+      <div class="campo"><label>Enlace de la foto</label><input id="pFoto" placeholder="https://..."></div>
+      <div class="campo"><label>Descripción</label><input id="pDescripcion" placeholder="Color, talle, detalles..."></div>
     </div>
+    <br><button onclick="agregarProducto()">Agregar producto</button>
+  </div>
 
+  <div class="seccion">
+    <h3>Productos publicados</h3>
+    <div id="listaAdmin"></div>
+  </div>
+
+  <div class="seccion">
+    <button class="secundario" onclick="exportarDatos()">Exportar copia de seguridad</button>
+    <button class="secundario" onclick="document.getElementById('archivoDatos').click()">Importar copia</button>
+    <input id="archivoDatos" type="file" accept=".json,application/json"
+           style="display:none" onchange="importarDatos(event)">
+    <p><small>Exportá una copia antes de cambiar de dispositivo o de navegador.</small></p>
+    <button class="secundario" onclick="cerrarAdmin()">Cerrar panel</button>
+  </div>
 </section>
 
-
-<section class="about" id="nosotros">
-
-    <div class="title">
-
-        <h2>Sobre Silmar</h2>
-
+<main id="catalogo">
+  <div class="barra">
+    <div>
+      <h2>Nuestra colección</h2>
+      <p>Encontrá lo que estás buscando.</p>
     </div>
+    <input class="busqueda" id="buscar" placeholder="Buscar productos..."
+           oninput="mostrarProductos()">
+  </div>
+  <div class="productos" id="productos"></div>
+</main>
 
-    <div class="about-content">
-
-        <p>
-            Somos una tienda de ropa ubicada en Oberá, Misiones.
-            Creamos Silmar para ofrecer prendas modernas, cómodas
-            y pensadas para acompañar tu estilo todos los días.
-        </p>
-
-        <br>
-
-        <p>
-            Encontrá prendas para todos los momentos y descubrí
-            nuestra nueva colección.
-        </p>
-
+<div id="carrito">
+  <div class="panel-carrito">
+    <div class="barra">
+      <h2>Tu carrito</h2>
+      <button class="secundario" onclick="cerrarCarrito()">Cerrar</button>
     </div>
-
-</section>
-
-
-<section class="contact" id="contacto">
-
-    <div class="title">
-
-        <h2>Contactanos</h2>
-
-        <p>Estamos para ayudarte</p>
-
+    <div id="itemsCarrito"></div>
+    <h3 id="totalCarrito">Total: $0</h3>
+    <div class="campo">
+      <label>Tu nombre</label><input id="clienteNombre" placeholder="Nombre">
+      <label>Dirección o forma de entrega</label><input id="clienteEntrega" placeholder="Opcional">
     </div>
-
-
-    <div class="contact-box">
-
-        <p>📍 Oberá, Misiones</p>
-
-        <p>📱 WhatsApp: 3755-717398</p>
-
-        <p>📷 Instagram: @silmar.moda</p>
-
-        <p>🕐 Lunes a sábado: 9:00 a 13:00 / 16:00 a 20:30</p>
-
-        <a
-            class="whatsapp"
-            href="https://wa.me/5493755717398"
-            target="_blank">
-            💬 HABLAR POR WHATSAPP
-        </a>
-
-    </div>
-
-</section>
-
+    <br>
+    <button onclick="pedidoWhatsApp()">Enviar pedido por WhatsApp</button>
+  </div>
+</div>
 
 <footer>
-
-    <h3>SILMAR</h3>
-
-    <p>Moda que va con vos.</p>
-
-    <p>Oberá, Misiones · Argentina</p>
-
-    <p>© 2026 Silmar - Página demostrativa</p>
-
+  <div class="logo" id="logoFooter">SILMAR</div>
+  <div>Consultas y pedidos por WhatsApp</div>
+  <div id="telefonoFooter"></div>
+  <a id="instagramFooter" href="https://instagram.com/silmartiendas"
+     target="_blank" rel="noopener">@silmartiendas</a>
+  <p>Gracias por elegirnos.</p>
 </footer>
 
+<script>
+const CLAVE_ADMIN = "silmar123"; // Cambiá esta clave antes de publicar.
+
+const CONFIG_INICIAL = {
+  nombre: "Silmar",
+  titulo: "Detalles que enamoran",
+  subtitulo: "Descubrí nuestros productos y encontrá tu favorito.",
+  telefono: "5493755717398",
+  instagram: "silmartiendas",
+  color: "#a67c52"
+};
+
+const PRODUCTOS_INICIALES = [
+  {
+    id: 1,
+    nombre: "Producto destacado",
+    precio: 15000,
+    foto: "https://placehold.co/600x700/f1e8dd/79634d?text=Tu+producto",
+    descripcion: "Reemplazá este ejemplo desde el panel."
+  },
+  {
+    id: 2,
+    nombre: "Nuevo producto",
+    precio: 22000,
+    foto: "https://placehold.co/600x700/e9e1d8/79634d?text=Novedad",
+    descripcion: "Agregá tus fotos y descripciones."
+  }
+];
+
+function leer(clave, defecto) {
+  try {
+    const valor = localStorage.getItem(clave);
+    return valor ? JSON.parse(valor) : defecto;
+  } catch {
+    return defecto;
+  }
+}
+
+let config = leer("tienda_config", CONFIG_INICIAL);
+let productos = leer("tienda_productos", PRODUCTOS_INICIALES);
+let carrito = [];
+
+function guardar() {
+  localStorage.setItem("tienda_config", JSON.stringify(config));
+  localStorage.setItem("tienda_productos", JSON.stringify(productos));
+}
+
+function dinero(n) {
+  return "$" + Number(n).toLocaleString("es-AR");
+}
+
+function aplicarConfiguracion() {
+  document.documentElement.style.setProperty("--color", config.color);
+  document.title = config.nombre + " | Tienda online";
+  document.getElementById("logo").textContent = config.nombre.toUpperCase();
+  document.getElementById("logoFooter").textContent = config.nombre.toUpperCase();
+  document.getElementById("titulo").textContent = config.titulo;
+  document.getElementById("subtitulo").textContent = config.subtitulo;
+  document.getElementById("instagram").href =
+    "https://instagram.com/" + encodeURIComponent(config.instagram);
+  document.getElementById("instagramFooter").href =
+    "https://instagram.com/" + encodeURIComponent(config.instagram);
+  document.getElementById("instagramFooter").textContent =
+    "@" + config.instagram;
+  document.getElementById("telefonoFooter").textContent = config.telefono;
+}
+
+function mostrarProductos() {
+  const texto = document.getElementById("buscar").value.toLowerCase();
+  const contenedor = document.getElementById("productos");
+  contenedor.innerHTML = "";
+
+  const filtrados = productos.filter(p =>
+    (p.nombre + " " + p.descripcion).toLowerCase().includes(texto)
+  );
+
+  if (!filtrados.length) {
+    contenedor.textContent = "No se encontraron productos.";
+    return;
+  }
+
+  filtrados.forEach(p => {
+    const tarjeta = document.createElement("article");
+    tarjeta.className = "producto";
+
+    const foto = document.createElement("img");
+    foto.src = p.foto;
+    foto.alt = p.nombre;
+    foto.loading = "lazy";
+    foto.onerror = () => {
+      foto.src = "https://placehold.co/600x700/f1e8dd/79634d?text=Sin+foto";
+    };
+
+    const info = document.createElement("div");
+    info.className = "info";
+    const nombre = document.createElement("h3");
+    nombre.textContent = p.nombre;
+    const descripcion = document.createElement("p");
+    descripcion.className = "descripcion";
+    descripcion.textContent = p.descripcion;
+    const precio = document.createElement("div");
+    precio.className = "precio";
+    precio.textContent = dinero(p.precio);
+    const acciones = document.createElement("div");
+    acciones.className = "acciones";
+
+    const agregar = document.createElement("button");
+    agregar.textContent = "Agregar";
+    agregar.onclick = () => agregarAlCarrito(p.id);
+
+    const consultar = document.createElement("button");
+    consultar.className = "secundario";
+    consultar.textContent = "Consultar";
+    consultar.onclick = () => {
+      const mensaje = `Hola, quiero consultar por ${p.nombre}, precio ${dinero(p.precio)}.`;
+      window.open("https://wa.me/" + config.telefono +
+        "?text=" + encodeURIComponent(mensaje), "_blank");
+    };
+
+    acciones.append(agregar, consultar);
+    info.append(nombre, descripcion, precio, acciones);
+    tarjeta.append(foto, info);
+    contenedor.append(tarjeta);
+  });
+}
+
+function administrar() {
+  if (sessionStorage.getItem("admin_autorizado") !== "si") {
+    const clave = prompt("Ingresá la clave de administración:");
+    if (clave !== CLAVE_ADMIN) {
+      alert("Clave incorrecta.");
+      return;
+    }
+    sessionStorage.setItem("admin_autorizado", "si");
+  }
+  document.getElementById("admin").style.display = "block";
+  document.getElementById("cNombre").value = config.nombre;
+  document.getElementById("cTitulo").value = config.titulo;
+  document.getElementById("cSubtitulo").value = config.subtitulo;
+  document.getElementById("cTelefono").value = config.telefono;
+  document.getElementById("cInstagram").value = config.instagram;
+  document.getElementById("cColor").value = config.color;
+  mostrarAdmin();
+  document.getElementById("admin").scrollIntoView({behavior:"smooth"});
+}
+
+function cerrarAdmin() {
+  document.getElementById("admin").style.display = "none";
+}
+
+function guardarConfiguracion() {
+  config = {
+    nombre: document.getElementById("cNombre").value.trim() || "Mi tienda",
+    titulo: document.getElementById("cTitulo").value.trim(),
+    subtitulo: document.getElementById("cSubtitulo").value.trim(),
+    telefono: document.getElementById("cTelefono").value.replace(/\D/g, ""),
+    instagram: document.getElementById("cInstagram").value.trim().replace(/^@/, ""),
+    color: document.getElementById("cColor").value
+  };
+  guardar();
+  aplicarConfiguracion();
+  alert("Cambios guardados en este navegador.");
+}
+
+function agregarProducto() {
+  const nombre = document.getElementById("pNombre").value.trim();
+  const precio = Number(document.getElementById("pPrecio").value);
+  const foto = document.getElementById("pFoto").value.trim();
+  const descripcion = document.getElementById("pDescripcion").value.trim();
+
+  if (!nombre || !Number.isFinite(precio) || precio < 0 || !foto) {
+    alert("Ingresá nombre, precio válido y enlace de foto.");
+    return;
+  }
+
+  if (!/^https?:\/\//i.test(foto)) {
+    alert("La foto debe tener un enlace que empiece con https:// o http://");
+    return;
+  }
+
+  productos.push({
+    id: Date.now(),
+    nombre, precio, foto,
+    descripcion
+  });
+
+  guardar();
+  mostrarProductos();
+  mostrarAdmin();
+
+  ["pNombre","pPrecio","pFoto","pDescripcion"].forEach(id =>
+    document.getElementById(id).value = ""
+  );
+}
+
+function mostrarAdmin() {
+  const lista = document.getElementById("listaAdmin");
+  lista.innerHTML = "";
+
+  productos.forEach(p => {
+    const fila = document.createElement("div");
+    fila.className = "lista-admin";
+    const texto = document.createElement("span");
+    texto.textContent = p.nombre + " — " + dinero(p.precio);
+    const botones = document.createElement("div");
+
+    const editar = document.createElement("button");
+    editar.textContent = "Editar";
+    editar.onclick = () => editarProducto(p.id);
+
+    const borrar = document.createElement("button");
+    borrar.className = "secundario";
+    borrar.textContent = "Eliminar";
+    borrar.onclick = () => {
+      if (confirm("¿Eliminar " + p.nombre + "?")) {
+        productos = productos.filter(x => x.id !== p.id);
+        guardar();
+        mostrarProductos();
+        mostrarAdmin();
+      }
+    };
+
+    botones.append(editar, borrar);
+    fila.append(texto, botones);
+    lista.append(fila);
+  });
+}
+
+function editarProducto(id) {
+  const p = productos.find(x => x.id === id);
+  if (!p) return;
+
+  const nombre = prompt("Nombre:", p.nombre);
+  if (nombre === null) return;
+  const precioTexto = prompt("Precio:", p.precio);
+  if (precioTexto === null) return;
+  const precio = Number(precioTexto);
+  if (!Number.isFinite(precio) || precio < 0) {
+    alert("Precio inválido.");
+    return;
+  }
+  const foto = prompt("Enlace de foto:", p.foto);
+  if (foto === null) return;
+  if (!/^https?:\/\//i.test(foto)) {
+    alert("El enlace debe comenzar con http:// o https://");
+    return;
+  }
+  const descripcion = prompt("Descripción:", p.descripcion);
+  if (descripcion === null) return;
+
+  Object.assign(p, {
+    nombre: nombre.trim() || p.nombre,
+    precio,
+    foto,
+    descripcion
+  });
+  guardar();
+  mostrarProductos();
+  mostrarAdmin();
+}
+
+function agregarAlCarrito(id) {
+  const p = productos.find(x => x.id === id);
+  if (!p) return;
+  const existente = carrito.find(x => x.id === id);
+  if (existente) existente.cantidad++;
+  else carrito.push({...p, cantidad:1});
+  actualizarCarrito();
+}
+
+function actualizarCarrito() {
+  document.getElementById("cantidad").textContent =
+    carrito.reduce((s,p) => s + p.cantidad, 0);
+
+  const lista = document.getElementById("itemsCarrito");
+  lista.innerHTML = "";
+  let total = 0;
+
+  carrito.forEach(p => {
+    total += p.precio * p.cantidad;
+    const fila = document.createElement("p");
+    fila.textContent = `${p.nombre} × ${p.cantidad} — ${dinero(p.precio*p.cantidad)} `;
+
+    const quitar = document.createElement("button");
+    quitar.className = "secundario";
+    quitar.textContent = "−";
+    quitar.onclick = () => {
+      p.cantidad--;
+      if (p.cantidad <= 0) carrito = carrito.filter(x => x.id !== p.id);
+      actualizarCarrito();
+    };
+
+    const sumar = document.createElement("button");
+    sumar.textContent = "+";
+    sumar.onclick = () => { p.cantidad++; actualizarCarrito(); };
+
+    fila.append(quitar, sumar);
+    lista.append(fila);
+  });
+
+  document.getElementById("totalCarrito").textContent = "Total: " + dinero(total);
+}
+
+function abrirCarrito() {
+  document.getElementById("carrito").style.display = "block";
+}
+function cerrarCarrito() {
+  document.getElementById("carrito").style.display = "none";
+}
+
+function pedidoWhatsApp() {
+  if (!carrito.length) {
+    alert("Tu carrito está vacío.");
+    return;
+  }
+  if (!config.telefono) {
+    alert("El dueño debe configurar su número de WhatsApp.");
+    return;
+  }
+
+  const nombre = document.getElementById("clienteNombre").value.trim();
+  const entrega = document.getElementById("clienteEntrega").value.trim();
+  let mensaje = `Hola, soy ${nombre || "un cliente"}. Quiero hacer este pedido:\n\n`;
+  let total = 0;
+
+  carrito.forEach(p => {
+    mensaje += `${p.nombre} x${p.cantidad} — ${dinero(p.precio*p.cantidad)}\n`;
+    total += p.precio*p.cantidad;
+  });
+
+  mensaje += `\nTotal estimado: ${dinero(total)}`;
+  if (entrega) mensaje += `\nEntrega: ${entrega}`;
+  mensaje += "\n¿Me confirman disponibilidad y forma de pago?";
+
+  window.open("https://wa.me/" + config.telefono +
+    "?text=" + encodeURIComponent(mensaje), "_blank");
+}
+
+function exportarDatos() {
+  const datos = {config, productos};
+  const blob = new Blob([JSON.stringify(datos,null,2)], {type:"application/json"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "copia-tienda.json";
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function importarDatos(event) {
+  const archivo = event.target.files[0];
+  if (!archivo) return;
+  const lector = new FileReader();
+
+  lector.onload = () => {
+    try {
+      const datos = JSON.parse(lector.result);
+      if (!datos.config || !Array.isArray(datos.productos)) {
+        throw new Error("Archivo no válido");
+      }
+      if (!confirm("Esto reemplazará los datos actuales. ¿Continuar?")) return;
+      config = datos.config;
+      productos = datos.productos;
+      guardar();
+      aplicarConfiguracion();
+      mostrarProductos();
+      administrar();
+      alert("Datos importados.");
+    } catch {
+      alert("No se pudo importar. Verificá el archivo.");
+    } finally {
+      event.target.value = "";
+    }
+  };
+  lector.readAsText(archivo);
+}
+
+aplicarConfiguracion();
+mostrarProductos();
+actualizarCarrito();
+</script>
 </body>
 </html>
